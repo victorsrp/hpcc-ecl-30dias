@@ -1,0 +1,41 @@
+# Planos de armazenamento do cluster HPCC usando os volumes do chart hpcc-localfile.
+# Mesmo arranjo do exemplo oficial (HPCC-Platform/helm/examples/local/values-localfile.yaml):
+# os dados ficam gravados no disco do Docker e sobrevivem a reinícios do PC.
+storage:
+  planes:
+  - name: dali
+    pvc: dali-localfile-hpcc-localfile-pvc
+    prefix: "/var/lib/HPCCSystems/dalistorage"
+    category: dali
+    forcePermissions: true
+  - name: dll
+    pvc: dll-localfile-hpcc-localfile-pvc
+    prefix: "/var/lib/HPCCSystems/queries"
+    category: dll
+    forcePermissions: true
+  - name: sasha
+    pvc: sasha-localfile-hpcc-localfile-pvc
+    prefix: "/var/lib/HPCCSystems/sasha"
+    category: sasha
+    forcePermissions: true
+  - name: debug
+    pvc: debug-localfile-hpcc-localfile-pvc
+    prefix: "/var/lib/HPCCSystems/debug"
+    category: debug
+    forcePermissions: true
+  - name: data
+    pvc: data-localfile-hpcc-localfile-pvc
+    prefix: "/var/lib/HPCCSystems/hpcc-data"
+    category: data
+    forcePermissions: true
+  - name: mydropzone
+    pvc: mydropzone-localfile-hpcc-localfile-pvc
+    prefix: "/var/lib/HPCCSystems/dropzone"
+    category: lz
+    forcePermissions: true
+
+sasha:
+  wu-archiver:
+    plane: sasha
+  dfuwu-archiver:
+    plane: sasha

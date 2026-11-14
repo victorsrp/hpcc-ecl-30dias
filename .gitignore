@@ -1,0 +1,8 @@
+# Progresso pessoal e marcador de "dados já carregados no cluster" (por PC)
+progresso.json
+.preparado
+
+# Locais
+.claude/
+.DS_Store
+Thumbs.db
